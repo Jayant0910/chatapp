@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "342532929066",
+    "firebase_url": "https://ninflix-89415-default-rtdb.firebaseio.com",
+    "project_id": "ninflix-89415",
+    "storage_bucket": "ninflix-89415.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:342532929066:android:9843d7d16a4051ce02f553",
+        "android_client_info": {
+          "package_name": "com.anass.jseries"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "342532929066-gnm4dg9676p9s1nu7pbf2u1r6ron3f26.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6d6TNivmXKHmCQK3UiIzJSsxUg5BPwXA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "342532929066-gnm4dg9676p9s1nu7pbf2u1r6ron3f26.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:342532929066:android:700c6894a2c6024d02f553",
+        "android_client_info": {
+          "package_name": "com.anass.ninflix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "342532929066-1r4hl06t65rns6ivg3av5i5o4f34ocsu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.anass.ninflix",
+            "certificate_hash": "d79b307ca7249425bd64d7b64be53905fd23cef5"
+          }
+        },
+        {
+          "client_id": "342532929066-gnm4dg9676p9s1nu7pbf2u1r6ron3f26.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6d6TNivmXKHmCQK3UiIzJSsxUg5BPwXA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "342532929066-gnm4dg9676p9s1nu7pbf2u1r6ron3f26.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

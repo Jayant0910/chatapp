@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+
+
+    <application
+        android:name=".DailyIncomeExpenseManager"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/icon200"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".dailyincomeexpensemanager.HomeActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".dailyincomeexpensemanager.SpendingLimitActivity" />
+
+
+        <activity
+            android:name=".dailyincomeexpensemanager.MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Permissions.PermissionsActivity"
+            android:theme="@style/Permissions_TransparentTheme" />
+
+        <activity
+            android:name=".dailyincomeexpensemanager.AddExpenceIncomeActivity"
+            android:label="Transaction"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".dailyincomeexpensemanager.IncomeFragmentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".dailyincomeexpensemanager.ExpenseFragmentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".dailyincomeexpensemanager.SettingActivity"
+            android:label="@string/action_settings"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".dailyincomeexpensemanager.SettingCategotyActivity"
+            android:parentActivityName=".dailyincomeexpensemanager.SettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".dailyincomeexpensemanager.DetailFragmentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".dailyincomeexpensemanager.AnalyticsFragmentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".dailyincomeexpensemanager.AddEditCategory"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".dailyincomeexpensemanager.TakeATourActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Intro" />
+
+        <receiver android:name=".dailyincomeexpensemanager.AlarmReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.DATE_CHANGED" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".dailyincomeexpensemanager.NotifyService" />
+
+        <activity
+            android:name=".dailyincomeexpensemanager.AccountList"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".dailyincomeexpensemanager.AddEditAccount"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".dailyincomeexpensemanager.CategoryTimeListFragmentActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".passcode.PinEnterActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_NoActionBar" />
+        <activity
+            android:name=".passcode.PinConfirm"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_NoActionBar" />
+        <activity
+            android:name=".passcode.LoginActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_NoActionBar" />
+        <activity
+            android:name=".passcode.EmailConfirm"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_NoActionBar" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true" />
+    </application>
+
+</manifest>

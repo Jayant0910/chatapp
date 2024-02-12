@@ -1,0 +1,61 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="DarkTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/bgdark</item>
+        <item name="colorPrimaryVariant">@color/darkfew</item>
+        <item name="android:windowBackground">@drawable/background_splash</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="21">@color/bgdark</item>
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">@color/bgdark</item>
+
+
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="tabtext" parent="android:Widget.TextView">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+    <style name="appbaartext" parent="android:Widget.TextView">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+
+    <style name="TransparentStatusBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowTranslucentStatus" tools:targetApi="20">true</item>
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">@color/bgdark</item>
+        <item name="android:windowDrawsSystemBarBackgrounds" tools:targetApi="21">true</item>
+        <item name="android:windowBackground">@drawable/background_splash</item>
+
+    </style>
+
+    <style name="TextAppearanceInactive" parent="android:Widget.TextView">
+        <item name="android:textSize">11dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+    <style name="TextAppearanceActive" parent="android:Widget.TextView">
+        <item name="android:textSize">11dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/bgbar</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+
+    <style name="MyRipple">
+        <item name="colorControlHighlight">@color/white</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="SpinnerTheme">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:fontFamily">@font/arabic_kufi</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

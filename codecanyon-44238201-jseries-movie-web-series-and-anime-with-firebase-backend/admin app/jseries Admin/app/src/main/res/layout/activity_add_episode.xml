@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Activities.Additem">
+
+    <LinearLayout
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:background="@color/bgdark"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <ImageView
+                android:id="@+id/goback"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_arrow_back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"/>
+
+            <TextView
+                android:layout_toEndOf="@+id/goback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Add Episode"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/idofepisod"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:maxLength="50"
+            android:maxHeight="50dp"
+            android:maxLines="1"
+            android:lines="1"
+            android:inputType="text"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/editbglogin"
+            android:fontFamily="@font/font_new"
+            android:hint="the link_id that you add in serie item"
+            android:padding="13dp"
+            android:textColor="@color/amoled_bg_color"
+            android:textColorHint="@color/amoled_bg_color"
+            android:textSize="12dp" />
+        <EditText
+            android:id="@+id/titleofepisod"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:maxLength="50"
+            android:maxHeight="50dp"
+            android:maxLines="1"
+            android:lines="1"
+            android:inputType="text"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/editbglogin"
+            android:fontFamily="@font/font_new"
+            android:hint="Title of Episode"
+            android:padding="13dp"
+            android:textColor="@color/amoled_bg_color"
+            android:textColorHint="@color/amoled_bg_color"
+            android:textSize="12dp" />
+        <EditText
+            android:id="@+id/linkofserver1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:maxLength="50"
+            android:maxHeight="50dp"
+            android:maxLines="1"
+            android:lines="1"
+            android:inputType="text"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/editbglogin"
+            android:fontFamily="@font/font_new"
+            android:hint="link of server1"
+            android:padding="13dp"
+            android:textColor="@color/amoled_bg_color"
+            android:textColorHint="@color/amoled_bg_color"
+            android:textSize="12dp" />
+        <EditText
+            android:id="@+id/linkofserver2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:maxLength="50"
+            android:maxHeight="50dp"
+            android:maxLines="1"
+            android:lines="1"
+            android:inputType="text"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/editbglogin"
+            android:fontFamily="@font/font_new"
+            android:hint="link of server2"
+            android:padding="13dp"
+            android:textColor="@color/amoled_bg_color"
+            android:textColorHint="@color/amoled_bg_color"
+            android:textSize="12dp" />
+        <EditText
+            android:id="@+id/linkofserver3"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:maxLength="50"
+            android:maxHeight="50dp"
+            android:maxLines="1"
+            android:lines="1"
+            android:inputType="text"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/editbglogin"
+            android:fontFamily="@font/font_new"
+            android:hint="link of server3"
+            android:padding="13dp"
+            android:textColor="@color/amoled_bg_color"
+            android:textColorHint="@color/amoled_bg_color"
+            android:textSize="12dp" />
+        <RelativeLayout
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:visibility="visible"
+            android:id="@+id/addepisodenn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/bgdark"
+            android:background="@drawable/btnflooowolbg"
+            android:foreground="@drawable/click_animation_round">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Add Episode"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+            <ImageView
+                android:layout_alignParentEnd="true"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_add"
+                app:tint="@color/white"
+
+                />
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+</ScrollView>

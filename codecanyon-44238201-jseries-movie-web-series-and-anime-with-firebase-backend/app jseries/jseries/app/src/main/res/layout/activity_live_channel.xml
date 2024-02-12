@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgdark"
+    android:layoutDirection="ltr">
+
+    <RelativeLayout
+        android:id="@+id/rltslid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/editlay"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            app:cardBackgroundColor="@color/bgdark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:fontFamily="@font/poppins_regular"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/white"
+                    android:text="LIVE CHANNELS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rectmovies"
+            android:layout_below="@+id/editlay"/>
+
+
+        <ProgressBar
+            android:id="@+id/progreed"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@color/white" />
+
+
+
+
+    </RelativeLayout>
+
+
+
+</ScrollView>

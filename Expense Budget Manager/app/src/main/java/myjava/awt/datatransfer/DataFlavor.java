@@ -1,0 +1,678 @@
+
+
+package myjava.awt.datatransfer;
+
+import java.io.*;
+import java.nio.*;
+import java.nio.charset.*;
+import java.util.*;
+
+import org.apache.harmony.awt.internal.nls.Messages;
+
+
+public class DataFlavor implements Externalizable, Cloneable {
+
+    private static final long serialVersionUID = 8367026044764648243L;
+
+    
+    @Deprecated
+    public static final DataFlavor plainTextFlavor =
+            new DataFlavor("text/plain; charset=unicode; class=java.io.InputStream",
+                    "Plain Text");
+
+    public static final DataFlavor stringFlavor =
+            new DataFlavor("application/x-java-serialized-object; class=java.lang.String",
+                    "Unicode String");
+
+   
+    public static final DataFlavor javaFileListFlavor =
+            new DataFlavor("application/x-java-file-list; class=java.util.List",
+                    "application/x-java-file-list");
+
+    public static final String javaJVMLocalObjectMimeType =
+            "application/x-java-jvm-local-objectref";
+
+    public static final String javaRemoteObjectMimeType =
+            "application/x-java-remote-object";
+
+    public static final String javaSerializedObjectMimeType =
+            "application/x-java-serialized-object";
+
+    private static final String sortedTextFlavors[] = {
+            "text/sgml",
+            "text/xml",
+            "text/html",
+            "text/rtf",
+            "text/enriched",
+            "text/richtext",
+            "text/uri-list",
+            "text/tab-separated-values",
+            "text/t140" ,
+            "text/rfc822-headers",
+            "text/parityfec",
+            "text/directory",
+            "text/css",
+            "text/calendar",
+            "application/x-java-serialized-object",
+            "text/plain"
+    };
+
+    private static DataFlavor plainUnicodeFlavor = null;
+
+    private String humanPresentableName;
+    private Class<?> representationClass;
+    private MimeTypeProcessor.MimeType mimeInfo;
+
+
+    protected static final Class<?> tryToLoadClass(String className, ClassLoader fallback)
+            throws ClassNotFoundException
+    {
+        try {
+            return Class.forName(className);
+        } catch (ClassNotFoundException e0) {
+            try {
+                return ClassLoader.getSystemClassLoader().loadClass(className);
+            } catch (ClassNotFoundException e1) {
+                ClassLoader contextLoader = Thread.currentThread().getContextClassLoader();
+
+                if (contextLoader != null) {
+                    try {
+                        return contextLoader.loadClass(className);
+                    } catch (ClassNotFoundException e2) {
+                    }
+                }
+
+                return fallback.loadClass(className);
+            }
+        }
+    }
+
+    private static boolean isCharsetSupported(String charset) {
+        try {
+            return Charset.isSupported(charset);
+        } catch (IllegalCharsetNameException e) {
+            return false;
+        }
+    }
+
+    public DataFlavor() {
+        mimeInfo = null;
+        humanPresentableName = null;
+        representationClass = null;
+    }
+
+    public DataFlavor(Class<?> representationClass, String humanPresentableName) {
+        mimeInfo = new MimeTypeProcessor.MimeType("application", "x-java-serialized-object");
+
+        if (humanPresentableName != null) {
+            this.humanPresentableName = humanPresentableName;
+        } else {
+            this.humanPresentableName = "application/x-java-serialized-object";
+        }
+
+        mimeInfo.addParameter("class", representationClass.getName());
+        this.representationClass = representationClass;
+    }
+
+    public DataFlavor(String mimeType, String humanPresentableName) {
+        try {
+            init(mimeType, humanPresentableName, null);
+        } catch (ClassNotFoundException e) {
+
+            throw new IllegalArgumentException(Messages.getString("awt.16C", mimeInfo.getParameter("class")),e);
+        }
+    }
+
+    public DataFlavor(String mimeType) throws ClassNotFoundException {
+        init(mimeType, null, null);
+    }
+
+    public DataFlavor(String mimeType, String humanPresentableName, ClassLoader classLoader)
+            throws ClassNotFoundException
+    {
+        init(mimeType, humanPresentableName, classLoader);
+    }
+
+    private void init(String mimeType, String humanPresentableName, ClassLoader classLoader)
+            throws ClassNotFoundException
+    {
+        String className;
+
+        try {
+            mimeInfo = MimeTypeProcessor.parse(mimeType);
+        } catch (IllegalArgumentException e) {
+
+            throw new IllegalArgumentException(Messages.getString("awt.16D", mimeType));
+        }
+
+        if (humanPresentableName != null) {
+            this.humanPresentableName = humanPresentableName;
+        } else {
+            this.humanPresentableName = mimeInfo.getPrimaryType() + '/' + mimeInfo.getSubType();
+        }
+
+        className = mimeInfo.getParameter("class");
+        if (className == null) {
+            className = "java.io.InputStream";
+            mimeInfo.addParameter("class", className);
+        }
+        representationClass = (classLoader == null) ?
+                Class.forName(className) :
+                classLoader.loadClass(className);
+    }
+
+    private String getCharset() {
+        if ((mimeInfo == null) || isCharsetRedundant()) {
+            return "";
+        }
+        String charset = mimeInfo.getParameter("charset");
+
+        if (isCharsetRequired() && ((charset == null) || (charset.length() == 0))) {
+            return Charset.defaultCharset().displayName();
+        }
+        if (charset == null) {
+            return "";
+        }
+
+        return charset;
+    }
+
+    private boolean isCharsetRequired() {
+        String type = mimeInfo.getFullType();
+
+        return (type.equals("text/sgml") ||
+                type.equals("text/xml") ||
+                type.equals("text/html") ||
+                type.equals("text/enriched") ||
+                type.equals("text/richtext") ||
+                type.equals("text/uri-list") ||
+                type.equals("text/directory") ||
+                type.equals("text/css") ||
+                type.equals("text/calendar") ||
+                type.equals("application/x-java-serialized-object") ||
+                type.equals("text/plain"));
+    }
+
+    private boolean isCharsetRedundant() {
+        String type = mimeInfo.getFullType();
+
+        return (type.equals("text/rtf") ||
+                type.equals("text/tab-separated-values") ||
+                type.equals("text/t140") ||
+                type.equals("text/rfc822-headers") ||
+                type.equals("text/parityfec"));
+    }
+
+    MimeTypeProcessor.MimeType getMimeInfo() {
+        return mimeInfo;
+    }
+
+    public String getPrimaryType() {
+        return (mimeInfo != null) ? mimeInfo.getPrimaryType() : null;
+    }
+
+    public String getSubType() {
+        return (mimeInfo != null) ? mimeInfo.getSubType() : null;
+    }
+
+    public String getMimeType() {
+        return (mimeInfo != null) ? MimeTypeProcessor.assemble(mimeInfo) : null;
+    }
+
+    public String getParameter(String paramName) {
+        String lowerName = paramName.toLowerCase();
+
+        if (lowerName.equals("humanpresentablename")) {
+            return humanPresentableName;
+        }
+        return mimeInfo != null ? mimeInfo.getParameter(lowerName) : null;
+    }
+
+    public String getHumanPresentableName() {
+        return humanPresentableName;
+    }
+
+    public void setHumanPresentableName(String humanPresentableName) {
+        this.humanPresentableName = humanPresentableName;
+    }
+
+    public Class<?> getRepresentationClass() {
+        return representationClass;
+    }
+
+    public final Class<?> getDefaultRepresentationClass() {
+        return InputStream.class;
+    }
+
+    public final String getDefaultRepresentationClassAsString() {
+        return getDefaultRepresentationClass().getName();
+    }
+
+    public boolean isRepresentationClassSerializable() {
+        return Serializable.class.isAssignableFrom(representationClass);
+    }
+
+    public boolean isRepresentationClassRemote() {
+
+
+        return false;
+    }
+
+    public boolean isRepresentationClassReader() {
+        return Reader.class.isAssignableFrom(representationClass);
+    }
+
+    public boolean isRepresentationClassInputStream() {
+        return InputStream.class.isAssignableFrom(representationClass);
+    }
+
+    public boolean isRepresentationClassCharBuffer() {
+        return CharBuffer.class.isAssignableFrom(representationClass);
+    }
+
+    public boolean isRepresentationClassByteBuffer() {
+        return ByteBuffer.class.isAssignableFrom(representationClass);
+    }
+
+    
+    @Deprecated
+    protected String normalizeMimeTypeParameter(String parameterName, String parameterValue) {
+        return parameterValue;
+    }
+
+    
+    @Deprecated
+    protected String normalizeMimeType(String mimeType) {
+        return mimeType;
+    }
+
+    public final boolean isMimeTypeEqual(DataFlavor dataFlavor) {
+        return mimeInfo != null ? mimeInfo.equals(dataFlavor.mimeInfo)
+                : (dataFlavor.mimeInfo == null);
+    }
+
+    public boolean isMimeTypeEqual(String mimeType) {
+        try {
+            return mimeInfo.equals(MimeTypeProcessor.parse(mimeType));
+        } catch (IllegalArgumentException e) {
+            return false;
+        }
+    }
+
+    public synchronized void writeExternal(ObjectOutput os) throws IOException {
+        os.writeObject(humanPresentableName);
+        os.writeObject(mimeInfo);
+    }
+
+    public synchronized void readExternal(ObjectInput is)
+            throws IOException, ClassNotFoundException
+    {
+        humanPresentableName = (String) is.readObject();
+        mimeInfo = (MimeTypeProcessor.MimeType) is.readObject();
+
+        representationClass = (mimeInfo != null) ?
+                Class.forName(mimeInfo.getParameter("class")) : null;
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        DataFlavor clone = new DataFlavor();
+
+        clone.humanPresentableName = humanPresentableName;
+        clone.representationClass = representationClass;
+        clone.mimeInfo = (mimeInfo != null) ? (MimeTypeProcessor.MimeType)
+                mimeInfo.clone() : null;
+
+        return clone;
+    }
+
+    @Override
+    public String toString() {
+        
+
+        return (getClass().getName()
+                + "[MimeType=(" + getMimeType()
+                + ");humanPresentableName=" + humanPresentableName + "]");
+    }
+
+    public boolean isMimeTypeSerializedObject() {
+        return isMimeTypeEqual(javaSerializedObjectMimeType);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if ((o == null) || !(o instanceof DataFlavor)) {
+            return false;
+        }
+        return equals((DataFlavor) o);
+    }
+
+    public boolean equals(DataFlavor that) {
+        if (that == this) {
+            return true;
+        }
+        if (that == null) {
+            return false;
+        }
+        if (mimeInfo == null) {
+            return (that.mimeInfo == null);
+        }
+        if (!(mimeInfo.equals(that.mimeInfo) &&
+                representationClass.equals(that.representationClass)))
+        {
+            return false;
+        }
+        if (!mimeInfo.getPrimaryType().equals("text") || isUnicodeFlavor()) {
+            return true;
+        }
+
+        String charset1 = getCharset();
+        String charset2 = that.getCharset();
+
+        if (!isCharsetSupported(charset1) || !isCharsetSupported(charset2)) {
+            return charset1.equalsIgnoreCase(charset2);
+        }
+        return (Charset.forName(charset1).equals(Charset.forName(charset2)));
+
+    }
+
+    @Deprecated
+    public boolean equals(String s) {
+      if (s == null) {
+          return false;
+      }
+
+      return isMimeTypeEqual(s);
+    }
+
+    public boolean match(DataFlavor that) {
+        return equals(that);
+    }
+
+    @Override
+    public int hashCode() {
+        return getKeyInfo().hashCode();
+    }
+
+    private String getKeyInfo() {
+        String key = mimeInfo.getFullType() + ";class=" + representationClass.getName();
+
+        if (!mimeInfo.getPrimaryType().equals("text") || isUnicodeFlavor()) {
+            return key;
+        }
+
+        return key + ";charset=" + getCharset().toLowerCase();
+    }
+
+    public boolean isFlavorSerializedObjectType() {
+        return (isMimeTypeSerializedObject()
+                && isRepresentationClassSerializable());
+    }
+
+    public boolean isFlavorRemoteObjectType() {
+        return (isMimeTypeEqual(javaRemoteObjectMimeType)
+                && isRepresentationClassRemote());
+    }
+
+    public boolean isFlavorJavaFileListType() {
+        return (List.class.isAssignableFrom(representationClass) &&
+                isMimeTypeEqual(javaFileListFlavor));
+    }
+
+    public boolean isFlavorTextType() {
+        if (equals(stringFlavor) || equals(plainTextFlavor)) {
+            return true;
+        }
+        if ((mimeInfo != null) && !mimeInfo.getPrimaryType().equals("text")) {
+            return false;
+        }
+
+        String charset = getCharset();
+
+        if (isByteCodeFlavor()) {
+            if (charset.length() != 0) {
+                return isCharsetSupported(charset);
+            }
+
+            return true;
+        }
+
+        return isUnicodeFlavor();
+    }
+
+    public Reader getReaderForText(Transferable transferable)
+            throws UnsupportedFlavorException, IOException
+    {
+        Object data = transferable.getTransferData(this);
+
+        if (data == null) {
+
+            throw new IllegalArgumentException(Messages.getString("awt.16E"));
+        }
+
+        if (data instanceof Reader) {
+            Reader reader = (Reader) data;
+            reader.reset();
+            return reader;
+        } else if (data instanceof String) {
+            return new StringReader((String) data);
+        } else if (data instanceof CharBuffer) {
+            return new CharArrayReader(((CharBuffer) data).array());
+        } else if (data instanceof char[]) {
+            return new CharArrayReader((char[]) data);
+        } else {
+            String charset = getCharset();
+            InputStream stream;
+
+            if (data instanceof InputStream) {
+                stream = (InputStream) data;
+                stream.reset();
+            } else if (data instanceof ByteBuffer) {
+                stream = new ByteArrayInputStream((((ByteBuffer) data).array()));
+            } else if (data instanceof byte[]) {
+                stream = new ByteArrayInputStream((byte[]) data);
+            } else {
+
+                throw new IllegalArgumentException(Messages.getString("awt.16F"));
+            }
+
+            if (charset.length() == 0) {
+                return new InputStreamReader(stream);
+            }
+            return new InputStreamReader(stream, charset);
+        }
+    }
+
+    public static final DataFlavor selectBestTextFlavor(DataFlavor[] availableFlavors) {
+        if (availableFlavors == null) {
+            return null;
+        }
+
+        List<List<DataFlavor>> sorted = sortTextFlavorsByType(new LinkedList<DataFlavor>(Arrays.asList(availableFlavors)));
+
+        if (sorted.isEmpty()) {
+            return null;
+        }
+
+        List<DataFlavor> bestSorted = sorted.get(0);
+
+        if (bestSorted.size() == 1) {
+            return bestSorted.get(0);
+        }
+
+        if (bestSorted.get(0).getCharset().length() == 0) {
+            return selectBestFlavorWOCharset(bestSorted);
+        }
+        return selectBestFlavorWCharset(bestSorted);
+    }
+
+    private static DataFlavor selectBestFlavorWCharset(List<DataFlavor> list) {
+        List<DataFlavor> best;
+
+        best = getFlavors(list, Reader.class);
+        if (best != null) {
+            return best.get(0);
+        }
+        best = getFlavors(list, String.class);
+        if (best != null) {
+            return best.get(0);
+        }
+        best = getFlavors(list, CharBuffer.class);
+        if (best != null) {
+            return best.get(0);
+        }
+        best = getFlavors(list, char[].class);
+        if (best != null) {
+            return best.get(0);
+        }
+
+        return selectBestByCharset(list);
+    }
+
+    private static DataFlavor selectBestByCharset(List<DataFlavor> list) {
+        List<DataFlavor> best;
+
+        best = getFlavors(list, new String[] {"UTF-16", "UTF-8", "UTF-16BE", "UTF-16LE"});
+        if (best == null) {
+            best = getFlavors(list, new String[] {Charset.defaultCharset().displayName()});
+            if (best == null) {
+                best = getFlavors(list, new String[] {"US-ASCII"});
+                if (best == null) {
+                    best = selectBestByAlphabet(list);
+                }
+            }
+        }
+
+        if (best != null) {
+            if (best.size() == 1) {
+                return best.get(0);
+            }
+            return selectBestFlavorWOCharset(best);
+        }
+
+        return null;
+    }
+
+    private static List<DataFlavor> selectBestByAlphabet(List<DataFlavor> list) {
+        String charsets[] = new String[list.size()];
+        LinkedList<DataFlavor> best = new LinkedList<DataFlavor>();
+
+        for (int i = 0; i < charsets.length; i++) {
+            charsets[i] = list.get(i).getCharset();
+        }
+        Arrays.sort(charsets, String.CASE_INSENSITIVE_ORDER);
+
+        for (DataFlavor flavor : list) {
+            if (charsets[0].equalsIgnoreCase(flavor.getCharset())) {
+                best.add(flavor);
+            }
+        }
+
+        return best.isEmpty() ? null : best;
+    }
+
+    private static List<DataFlavor> getFlavors(List<DataFlavor> list, String[] charset) {
+        LinkedList<DataFlavor> sublist = new LinkedList<DataFlavor>();
+
+        for (Iterator<DataFlavor> i = list.iterator(); i.hasNext();) {
+            DataFlavor flavor = i.next();
+
+            if (isCharsetSupported(flavor.getCharset())) {
+                for (String element : charset) {
+                    if (Charset.forName(element).equals(Charset.forName(flavor.getCharset()))) {
+                        sublist.add(flavor);
+                    }
+                }
+            } else {
+                i.remove();
+            }
+        }
+
+        return sublist.isEmpty() ? null : list;
+    }
+
+    private static DataFlavor selectBestFlavorWOCharset(List<DataFlavor> list) {
+        List<DataFlavor> best;
+
+        best = getFlavors(list, InputStream.class);
+        if (best != null) {
+            return best.get(0);
+        }
+        best = getFlavors(list, ByteBuffer.class);
+        if (best != null) {
+            return best.get(0);
+        }
+        best = getFlavors(list, byte[].class);
+        if (best != null) {
+            return best.get(0);
+        }
+
+        return list.get(0);
+    }
+
+    private static List<DataFlavor> getFlavors(List<DataFlavor> list, Class<?> klass) {
+        LinkedList<DataFlavor> sublist = new LinkedList<DataFlavor>();
+
+        for (DataFlavor flavor : list) {
+            if (flavor.representationClass.equals(klass)) {
+                sublist.add(flavor);
+            }
+        }
+
+        return sublist.isEmpty() ? null : list;
+    }
+
+    private static List<List<DataFlavor>> sortTextFlavorsByType(List<DataFlavor> availableFlavors) {
+        LinkedList<List<DataFlavor>> list = new LinkedList<List<DataFlavor>>();
+
+        for (String element : sortedTextFlavors) {
+            List<DataFlavor> subList = fetchTextFlavors(availableFlavors, element);
+
+            if (subList != null) {
+                list.addLast(subList);
+            }
+        }
+        if (!availableFlavors.isEmpty()) {
+            list.addLast(availableFlavors);
+        }
+
+        return list;
+    }
+
+    private static List<DataFlavor> fetchTextFlavors(List<DataFlavor> availableFlavors, String mimeType) {
+        LinkedList<DataFlavor> list = new LinkedList<DataFlavor>();
+
+        for (Iterator<DataFlavor> i = availableFlavors.iterator(); i.hasNext();) {
+            DataFlavor flavor = i.next();
+
+            if (flavor.isFlavorTextType()) {
+                if (flavor.mimeInfo.getFullType().equals(mimeType)) {
+                    if (!list.contains(flavor)) {
+                        list.add(flavor);
+                    }
+                    i.remove();
+                }
+            } else {
+                i.remove();
+            }
+        }
+
+        return list.isEmpty() ? null : list;
+    }
+
+    private boolean isUnicodeFlavor() {
+        return (representationClass != null) 
+                && (representationClass.equals(Reader.class) 
+                || representationClass.equals(String.class) 
+                || representationClass.equals(CharBuffer.class) 
+                || representationClass.equals(char[].class));
+    }
+
+    private boolean isByteCodeFlavor() {
+        return (representationClass != null) 
+                && (representationClass.equals(InputStream.class)
+                || representationClass.equals(ByteBuffer.class)
+                || representationClass.equals(byte[].class));
+    }
+
+}

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+
+    android:layoutDirection="ltr"
+    android:background="@drawable/quality_selector_background">
+
+   <RelativeLayout
+       android:layout_gravity="center"
+       android:layout_width="300dp"
+       android:layout_height="wrap_content">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:gravity="center"
+           android:orientation="vertical"
+           android:padding="15dp">
+
+
+           <LinearLayout
+               android:id="@+id/quality_list"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:gravity="center"
+               android:orientation="vertical"
+               android:layout_marginRight="20dp"
+               android:layout_marginLeft="20dp">
+
+               <EditText
+                   android:id="@+id/linkofserver2"
+                   android:layout_width="match_parent"
+                   android:layout_height="50dp"
+                   android:layout_marginStart="6dp"
+                   android:layout_marginTop="10dp"
+                   android:layout_centerHorizontal="true"
+                   android:maxLength="50"
+                   android:maxHeight="50dp"
+                   android:maxLines="1"
+                   android:lines="1"
+                   android:inputType="text"
+                   android:layout_marginEnd="6dp"
+                   android:layout_marginBottom="6dp"
+                   android:background="@drawable/editbglogin"
+                   android:fontFamily="@font/font_new"
+                   android:hint="past your link"
+                   android:padding="13dp"
+                   android:textColor="@color/white"
+                   android:textColorHint="@color/white"
+                   android:textSize="12dp" />
+               <EditText
+                   android:id="@+id/linkofserver3"
+                   android:layout_width="match_parent"
+                   android:layout_height="50dp"
+                   android:layout_marginStart="6dp"
+                   android:layout_marginTop="10dp"
+                   android:layout_centerHorizontal="true"
+                   android:maxLength="50"
+                   android:maxHeight="50dp"
+                   android:maxLines="1"
+                   android:lines="1"
+                   android:inputType="text"
+                   android:layout_marginEnd="6dp"
+                   android:layout_marginBottom="6dp"
+                   android:background="@drawable/editbglogin"
+                   android:fontFamily="@font/font_new"
+                   android:hint="chosse your version- only int"
+                   android:padding="13dp"
+                   android:textColor="@color/white"
+                   android:textColorHint="@color/white"
+                   android:textSize="12dp" />
+               <RelativeLayout
+                   android:layout_marginEnd="20dp"
+                   android:layout_marginStart="20dp"
+                   android:layout_marginTop="20dp"
+                   android:visibility="visible"
+                   android:id="@+id/addepisodenn"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:backgroundTint="@color/bgdark"
+                   android:background="@drawable/btnflooowolbg"
+                   android:foreground="@drawable/click_animation_round">
+
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_centerVertical="true"
+                       android:layout_marginStart="10dp"
+                       android:layout_marginTop="10dp"
+                       android:layout_marginEnd="10dp"
+                       android:layout_marginBottom="10dp"
+                       android:fontFamily="@font/poppins_bold"
+                       android:text="Add Update"
+                       android:textAllCaps="true"
+                       android:textColor="@color/white"
+                       android:textSize="16dp"
+                       android:textStyle="bold" />
+                   <ImageView
+                       android:layout_alignParentEnd="true"
+                       android:layout_width="30dp"
+                       android:layout_height="30dp"
+                       android:layout_centerVertical="true"
+                       android:src="@drawable/ic_add"
+                       app:tint="@color/white"
+
+                       />
+
+               </RelativeLayout>
+
+           </LinearLayout>
+
+       </LinearLayout>
+
+   </RelativeLayout>
+
+</ScrollView>

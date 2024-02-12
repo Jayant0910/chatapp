@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:dslv="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/cat_list_expense_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/title_bg"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/expense_category"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/add"
+                        android:textStyle="bold"
+                        app:tint="@color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay_cat_list_expense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/data_bg"
+                        android:orientation="vertical">
+
+                        <com.demo.example.widget.SortListView.DragSortListView
+                            android:id="@+id/cat_list_expense"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:dividerHeight="1dp"
+                            android:fastScrollEnabled="true"
+                            android:paddingTop="0dp"
+                            android:paddingBottom="0dp"
+                            dslv:collapsed_height="2dp"
+                            dslv:drag_enabled="true"
+                            dslv:drag_handle_id="@+id/grabber"
+                            dslv:drag_scroll_start="0.33"
+                            dslv:drag_start_mode="onDown"
+                            dslv:float_alpha="0.6"
+                            dslv:max_drag_scroll_speed="0.5"
+                            dslv:remove_enabled="false"
+                            dslv:remove_mode="flingRemove"
+                            dslv:slide_shuffle_speed="0.3"
+                            dslv:sort_enabled="true"
+                            dslv:track_drag_sort="false"
+                            dslv:use_default_controller="true" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/cat_list_income_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/title_bg"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/income_category"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/add"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold"
+                        app:tint="@color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay_cat_list_income"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/data_bg"
+                        android:orientation="vertical">
+
+                        <com.demo.example.widget.SortListView.DragSortListView
+                            android:id="@+id/cat_list_income"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:dividerHeight="1dp"
+                            android:fastScrollEnabled="true"
+                            android:paddingTop="0dp"
+                            android:paddingBottom="0dp"
+                            dslv:collapsed_height="2dp"
+                            dslv:drag_enabled="true"
+                            dslv:drag_handle_id="@+id/grabber"
+                            dslv:drag_scroll_start="0.33"
+                            dslv:drag_start_mode="onDown"
+                            dslv:float_alpha="0.6"
+                            dslv:max_drag_scroll_speed="0.5"
+                            dslv:remove_enabled="false"
+                            dslv:remove_mode="flingRemove"
+                            dslv:slide_shuffle_speed="0.3"
+                            dslv:sort_enabled="true"
+                            dslv:track_drag_sort="false"
+                            dslv:use_default_controller="true" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/bannerAd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

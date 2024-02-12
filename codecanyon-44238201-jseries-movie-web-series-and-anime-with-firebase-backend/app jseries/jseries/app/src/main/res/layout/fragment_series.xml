@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/rltslid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.smarteist.autoimageslider.SliderView
+                android:id="@+id/slider"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                app:sliderIndicatorEnabled="false"
+                app:sliderAutoCycleDirection="right"
+                app:sliderStartAutoCycle="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <ProgressBar
+                android:id="@+id/pogsslid"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:indeterminateTint="@color/white" />
+
+
+
+
+            <RelativeLayout
+                android:layout_below="@+id/slider"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rectmovies"/>
+
+
+                <ProgressBar
+                    android:id="@+id/progreed"
+                    android:layout_width="43dp"
+                    android:layout_height="43dp"
+                    android:layout_centerInParent="true"
+                    android:indeterminateTint="@color/white" />
+
+            </RelativeLayout>
+
+
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+
+
+</ScrollView>

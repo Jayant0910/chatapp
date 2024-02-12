@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llDateBar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="top|left|center_vertical|center_horizontal|center"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <TextView
+        android:id="@+id/tvStartDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/data_bg"
+        android:padding="10dp"
+        android:tag="1"
+        android:text="@string/start_date"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/tvEndDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/data_bg"
+        android:padding="10dp"
+        android:tag="2"
+        android:text="@string/end_date"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+</LinearLayout>

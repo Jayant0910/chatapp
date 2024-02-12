@@ -1,0 +1,404 @@
+{
+  "Views": {
+    "-NOZK9Q_ialeEBov2VZd": {
+      "views": 226668
+    },
+    "-NOZKAEaoDqkuYFKEXOi": {
+      "views": 3
+    },
+    "-NOZKKf4luvHRu8iSFTl": {
+      "views": 2389
+    },
+    "-NOdLnKeLF_geouR6AYW": {
+      "views": 974376
+    },
+    "-NOdXDS3YFlnxmC6Mnk-": {
+      "views": 72
+    },
+    "-NOiZoSv4avjCU96eJur": {
+      "views": 79440
+    }
+  },
+  "allseriesandmovies": {
+    "-NOZK9Q_ialeEBov2VZd": {
+      "age": "+15",
+      "cast": "squidgame",
+      "country": "Korea",
+      "gener": "action,comedy",
+      "id": "allseriesandmovies",
+      "link_id": "squidgamelink",
+      "other_season_id": "squidgame",
+      "place": "trend,movie",
+      "poster": "https://m.media-amazon.com/images/M/MV5BYWE3MDVkN2EtNjQ5MS00ZDQ4LTliNzYtMjc2YWMzMDEwMTA3XkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_FMjpg_UX1000_.jpg",
+      "serie_id": "-NOZK9Q_ialeEBov2VZd",
+      "story": "Seong Gi-hun, a divorced father and indebted gambler who lives with his elderly mother, is invited to play a series of children's games for a chance at a large cash prize. Accepting the offer, he is taken to an unknown location where he finds himself among 455 other players who are all in deep financial trouble.",
+      "title": "Squid Game S1",
+      "views": 84,
+      "year": "2021",
+      "youtubetrailerid": "fdd56T"
+    },
+    "-NOZKAEaoDqkuYFKEXOi": {
+      "age": "+15",
+      "cast": "avangerendgame",
+      "country": "Netflix",
+      "gener": "action,comedy",
+      "id": "allseriesandmovies",
+      "link_id": "avangerendgamelink",
+      "other_season_id": "other_id",
+      "place": "movie",
+      "poster": "https://lumiere-a.akamaihd.net/v1/images/p_avengersendgame_19751_e14a0104.jpeg?region=0%2C0%2C540%2C810",
+      "serie_id": "-NOZKAEaoDqkuYFKEXOi",
+      "story": "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining",
+      "title": "Avenngers : End Game",
+      "views": 1114,
+      "year": "2019",
+      "youtubetrailerid": "fdd56T"
+    },
+    "-NOZKKf4luvHRu8iSFTl": {
+      "age": "+15",
+      "cast": "onepiece",
+      "country": "JAPON",
+      "gener": "action,comedy",
+      "id": "allseriesandmovies",
+      "link_id": "onepiecelink",
+      "other_season_id": "onepiece",
+      "place": "anime",
+      "poster": "https://m.media-amazon.com/images/M/MV5BODcwNWE3OTMtMDc3MS00NDFjLWE1OTAtNDU3NjgxODMxY2UyXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg",
+      "serie_id": "-NOZKKf4luvHRu8iSFTl",
+      "story": "Monkey D. Luffy wants to become the King of all pirates. Along his quest he meets: a skilled swordsman named Roronoa Zolo; Nami, a greedy thief who has a knack for navigation; Usopp, a great liar who has an affinity for inventing; Sanji, a warrior cook; Chopper, a sentient deer who is also a skilled physician; and Robin, former member of Baroque Works. The gang sets sail to unknown seas in Grand Line to find the treasure of One Piece.",
+      "title": "One Piece",
+      "views": 351358,
+      "year": "1998",
+      "youtubetrailerid": "fdd56T"
+    },
+    "-NOdLnWAsvRCgg4IKeP_": {
+      "age": "+15",
+      "cast": "rick",
+      "country": "Netflix",
+      "gener": "action,comedy",
+      "id": "allseriesandmovies",
+      "link_id": "ricks1",
+      "other_season_id": "rick",
+      "place": "serie",
+      "poster": "https://shahed4uu.shop/wp-content/uploads/2021/07/Rick-and-Morty-S01-426x550.jpg",
+      "serie_id": "-NOdLnKeLF_geouR6AYW",
+      "story": "fdfo woowr kdjfkw",
+      "title": "Rick and Morty S1",
+      "type": 0,
+      "views": 220,
+      "year": "2010",
+      "youtubetrailerid": "fdd56T"
+    },
+    "-NOdLp7ktqld2Yd4D_wu": {
+      "age": "+15",
+      "cast": "Avatar",
+      "country": "United States",
+      "gener": "action,comedy",
+      "id": "allseriesandmovies",
+      "link_id": "avatar2022link",
+      "other_season_id": "other_id",
+      "place": "movie,trend",
+      "poster": "https://ww1.123moviesfree.net/img/thumb/avatar-the-way-of-water-1630854576.jpg",
+      "serie_id": "-NOdLnKeLF_geouR6AYW",
+      "story": "Set more than a decade after the events of the first film, learn the story of the Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure.",
+      "title": "Avatar: The Way of Water",
+      "type": 0,
+      "views": 749,
+      "year": "2005",
+      "youtubetrailerid": "fdd56T"
+    },
+    "-NOdLpDwS6VFAMmNBF9T": {
+      "age": "+15",
+      "cast": "goblin",
+      "country": "Netflix",
+      "gener": "action,comedy",
+      "id": "allseriesandmovies",
+      "link_id": "squidgamelink",
+      "other_season_id": "other_id",
+      "place": "serie,drama",
+      "poster": "https://ww1.123moviesfree.net/img/thumb/goblin-18179.jpg",
+      "serie_id": "-NOdLnKeLF_geouR6AYW",
+      "story": "Kim Shin is an immortal “goblin,” and has the rather honorable title of being the Protector of Souls. His roommate Wang Yeo also happens to have the equally lofty, if thoroughly opposing, title of Angel of Death, and he acts as the storied grim reaper that claims souls. However, both these devilishly handsome angels have a problem: Wang Yeo has amnesia and Kim Shin wants to end his own life. Unfortunately for goblins, the only way to defeat immortality is to marry a human bride. For that purpose, Kim Shin decides to win over Ji Eun Tak an optimistic high school girl who he thinks will be the priestess that ends his cursed existence.",
+      "title": "Goblin",
+      "type": 0,
+      "views": 44,
+      "year": "2005",
+      "youtubetrailerid": "fdd56T"
+    },
+    "-NOdLpHbLrENPbBJmGjU": {
+      "age": "+15",
+      "cast": "lofu",
+      "country": "Netflix",
+      "gener": "action,comedy",
+      "id": "allseriesandmovies",
+      "link_id": "squidgamelink",
+      "other_season_id": "other_id",
+      "place": "serie,trend",
+      "poster": "https://ww1.123moviesfree.net/img/thumb/the-last-of-us-season-1-1630854719.jpg",
+      "serie_id": "-NOdLnKeLF_geouR6AYW",
+      "story": "Twenty years after modern civilization has been destroyed. Joel, a hardened survivor, is hired to smuggle Ellie, a 14-year-old girl, out of an oppressive quarantine zone. What starts as a small job soon becomes a brutal, heartbreaking journey, as they both must traverse the U.S. and depend on each other for survival.",
+      "title": "The Last of Us",
+      "type": 0,
+      "views": 22,
+      "year": "2005",
+      "youtubetrailerid": "fdd56T"
+    },
+    "-NOdLpKSOV6XglMPTq5R": {
+      "age": "+15",
+      "cast": "puusin",
+      "country": "Netflix",
+      "gener": "action,comedy",
+      "id": "allseriesandmovies",
+      "link_id": "squidgamelink",
+      "other_season_id": "other_id",
+      "place": "movie",
+      "poster": "https://ww1.123moviesfree.net/img/thumb/puss-in-boots-the-last-wish-1630854551.jpg",
+      "serie_id": "-NOdLnKeLF_geouR6AYW",
+      "story": "Puss in Boots discovers that his passion for adventure has taken its toll: He has burned through eight of his nine lives, leaving him with only one life left. Puss sets out on an epic journey to find the mythical Last Wish and restore his nine lives.",
+      "title": "Puss in Boots: The Last Wish",
+      "type": 0,
+      "views": 59,
+      "year": "2005",
+      "youtubetrailerid": "fdd56T"
+    },
+    "-NOdLpN3nlZLUb0Q92Kg": {
+      "age": "+15",
+      "cast": "twmovie",
+      "country": "Netflix",
+      "gener": "action,comedy",
+      "id": "allseriesandmovies",
+      "link_id": "squidgamelink",
+      "other_season_id": "other_id",
+      "place": "movie,trend",
+      "poster": "https://ww1.123moviesfree.net/img/thumb/teen-wolf-the-movie-1630854771.jpg",
+      "serie_id": "-NOdLnKeLF_geouR6AYW",
+      "story": "A full moon rises in Beacon Hills, and with it a terrifying evil has emerged. The wolves are howling once again, calling for the return of Banshees, Werecoyotes, Hellhounds, Kitsunes, and every other shapeshifter in the night. But only a Werewolf like Scott McCall, no longer a teenager yet still an Alpha, can gather both new allies and reunite trusted friends to fight back against what could be the most powerful and deadliest enemy they’ve ever faced.",
+      "title": "Teen Wolf : The Movie",
+      "type": 0,
+      "views": 566,
+      "year": "2005",
+      "youtubetrailerid": "fdd56T"
+    },
+    "-NOdLpP9hpRp5wldlVdd": {
+      "age": "+15",
+      "cast": "seckim",
+      "country": "Netflix",
+      "gener": "action,comedy",
+      "id": "allseriesandmovies",
+      "link_id": "squidgamelink",
+      "other_season_id": "other_id",
+      "place": "serie,kdrama",
+      "poster": "https://ww1.123moviesfree.net/img/thumb/whats-wrong-with-secretary-kim-25212.jpg",
+      "serie_id": "-NOdLnKeLF_geouR6AYW",
+      "story": "What's Wrong With Secretary Kim revolves around the narcissistic Lee Young Joon, the vice president of a company run by his family. He is very self absorbed and thinks highly of himself, so much so that he barely acknowledges the people around him. Lee Young Joon has a capable and patient secretary in Kim Mi So who has remained by his side and worked diligently for 9 years without any romantic involvement.But Mi So has grown tired of her frustyoutubetrailerid boss so when she decides to resign from her job, hilarious misunderstandings ensue. After 9 years of their strictly-workplace relationship, can it now develop in something more?",
+      "title": "What's Wrong With Secretary Kim",
+      "type": 0,
+      "views": 566,
+      "year": "2005",
+      "youtubetrailerid": "fdd56T"
+    },
+    "-NOdLpREi8f7nMGlW1mY": {
+      "age": "+15",
+      "cast": "bokono",
+      "country": "Netflix",
+      "gener": "action,comedy",
+      "id": "allseriesandmovies",
+      "link_id": "squidgamelink",
+      "other_season_id": "other_id",
+      "place": "anime,movie",
+      "poster": "https://upload.9anime.tube/boku-no-hero-academia-the-movie-futari-no-hero.png",
+      "serie_id": "-NOdLnKeLF_geouR6AYW",
+      "story": "Deku and All Might receive an invitation to I-Expo, the world’s leading exhibition of Quirk abilities and hero item innovations! Amid the excitement, sponsors, and pros from all over, Deku meets Melissa, a girl who is Quirkless just like he once was. Suddenly, I-Expo’s top-of-the-line security system gets hacked by villains, and a sinister plan is set in motion. It’s a serious threat to hero society, and one man holds the key to it all—the symbol of peace, All Might.",
+      "title": "BOKU NO HERO ACADEMIA THE MOVIE",
+      "type": 0,
+      "views": 4752,
+      "year": "2005",
+      "youtubetrailerid": "fdd56T"
+    },
+    "-NOdXDeY7MVmZ7d_6J4e": {
+      "age": "+15",
+      "cast": "antman",
+      "country": "Netflix",
+      "gener": "Comedy, Action, Adventure",
+      "id": "allseriesandmovies",
+      "link_id": "squidgamelink",
+      "other_season_id": "other_id",
+      "place": "movie,trend",
+      "poster": "https://anytimemovie.online/images/movies/imdbcache/tt10954600.jpg",
+      "serie_id": "-NOdXDS3YFlnxmC6Mnk-",
+      "story": "fdfo woowr kdjfkw",
+      "title": "Ant-Man and the Wasp: Quantumania",
+      "type": 0,
+      "views": 58993,
+      "year": "2023",
+      "youtubetrailerid": "fdd56T"
+    },
+    "-NOiZpB1v0V5RzR3IKuD": {
+      "age": "+15",
+      "cast": "squidgame",
+      "country": "South Korea",
+      "gener": "action,comedy",
+      "id": "allseriesandmovies",
+      "link_id": "squidgames2link",
+      "other_season_id": "squidgame",
+      "place": "serie",
+      "poster": "http://photos.hancinema.net/photos/photo1502156.jpg",
+      "serie_id": "-NOiZoSv4avjCU96eJur",
+      "story": "What will happen? At the end of Squid Game's first season, Gi-hun has managed to beat the game against all odds. But the game's not over yet. Following the death of the Squid Game's creator, Gi-hun discovers that the competition is still going with new recruits",
+      "title": "Squid Game S2",
+      "type": 0,
+      "views": 22966,
+      "year": "2023",
+      "youtubetrailerid": "fdd56T"
+    },
+    "-NQ4vFO_X8gtpgouYsjQ": {
+      "age": "+15",
+      "cast": "squidgame",
+      "country": "USA",
+      "gener": "action,comedy",
+      "id": "-NQ4vFO_X8gtpgouYsjQ",
+      "link_id": "squidgamelink",
+      "other_season_id": "squidgame",
+      "place": "serie",
+      "poster": "Add poster Image link",
+      "serie_id": "-NQ4vFO_X8gtpgouYsjQ",
+      "story": "Add Story ",
+      "title": "Squid Game S1",
+      "type": 0,
+      "views": 566,
+      "year": "2005",
+      "youtubetrailerid": ""
+    }
+  },
+  "casts": {
+    "squidgame": {
+      "-NOtfxKEiA0442zzS3UA": {
+        "cast_id": "squidgame",
+        "chrachter_id": "-NOtfxKD1racLmsSltk5",
+        "name": "Lee Jung-Jae",
+        "poster": "https://asianwiki.com/images/2/21/Lee_Jung-Jae-Assassiantion-GV.jpg"
+      }
+    }
+  },
+  "categories": [
+    {
+      "imgurl": "https://chpic.su/_data/stickers/i/ios_emojiii/ios_emojiii_011.webp",
+      "title": "Romence"
+    },
+    {
+      "imgurl": "https://chpic.su/_data/stickers/i/ios_emojiii/ios_emojiii_003.webp",
+      "title": "Comedy"
+    },
+    {
+      "imgurl": "https://chpic.su/_data/stickers/i/ios_emojiii/ios_emojiii_048.webp",
+      "title": "Horror"
+    },
+    {
+      "imgurl": "https://chpic.su/_data/stickers/i/ios_emojiii/ios_emojiii_073.webp",
+      "title": "Demons"
+    },
+    {
+      "imgurl": "https://chpic.su/_data/stickers/i/ios_emojiii/ios_emojiii_008.webp",
+      "title": "Action"
+    }
+  ],
+  "links": {
+    "avatar2022link": [
+      {
+        "epetitle": "movie",
+        "postkey": "Dd6drt53RERFDsdclfe52",
+        "server1": "https://yodbox.com/bacfrccoqfv3.html",
+        "server2": "https://yodbox.com/bacfrccoqfv3.html",
+        "server3": "df"
+      }
+    ],
+    "squidgamelink": {
+      "-NOsTr4tjpEmRyBkMO0W": {
+        "epetitle": "Episode 1",
+        "postkey": "-NOsTr4rYrz8sdPu5UD2",
+        "server1": "https://www.fembed.com/f/dedwj5bx0dz5kpew",
+        "server2": "https://www.youtube.com/watch?v=OHz0xIR8uwI",
+        "server3": "https://drive.google.com/u/0/uc?id=1cTRYinX8CjTM9q6AAmizw2JEPa7huARS&export=download"
+      },
+      "-NOsTsC4Y3PXvRu9Lzfk": {
+        "epetitle": "Episode 2",
+        "postkey": "-NOsTsC3C1Kh9o1T4GHt",
+        "server1": "",
+        "server2": "https://www.youtube.com/watch?v=OHz0xIR8uwI",
+        "server3": ""
+      },
+      "-NOsTtn1FGm3OzoqgWFn": {
+        "epetitle": "Episode 3",
+        "postkey": "-NOsTtn0IsTznrq5G_Il",
+        "server1": "",
+        "server2": "https://www.youtube.com/watch?v=OHz0xIR8uwI",
+        "server3": ""
+      },
+      "-NOsTucQ9K29WToPwEDT": {
+        "epetitle": "Episode 4",
+        "postkey": "-NOsTucPhVOfphDFmoCZ",
+        "server1": "",
+        "server2": "https://www.youtube.com/watch?v=OHz0xIR8uwI",
+        "server3": ""
+      },
+      "-NOsTuirqVzg3eK7G4GY": {
+        "epetitle": "Episode 5",
+        "postkey": "-NOsTuirqVzg3eK7G4GX",
+        "server1": "",
+        "server2": "https://www.youtube.com/watch?v=OHz0xIR8uwI",
+        "server3": ""
+      },
+      "-NOsTupQy0ffnLuTZTvF": {
+        "epetitle": "Episode 6",
+        "postkey": "-NOsTupP_sMUo2yixX0m",
+        "server1": "",
+        "server2": "https://www.youtube.com/watch?v=OHz0xIR8uwI",
+        "server3": ""
+      },
+      "-NOsTvoNMYyyiyzwoc_1": {
+        "epetitle": "Episode 7",
+        "postkey": "-NOsTvoMrgNtUOWCi2NC",
+        "server1": "",
+        "server2": "https://www.youtube.com/watch?v=OHz0xIR8uwI",
+        "server3": ""
+      },
+      "-NOsTxfzQGIjtzXTnMcp": {
+        "epetitle": "Episode 8",
+        "postkey": "-NOsTxfylv9O9sBgEsC2",
+        "server1": "",
+        "server2": "https://www.youtube.com/watch?v=OHz0xIR8uwI",
+        "server3": ""
+      }
+    }
+  },
+  "ratedb": {
+    "ihmqMruCnCWZkFcrvRZ5Eyvvw7Q2": {
+      "-NOZK9Q_ialeEBov2VZd": true
+    }
+  },
+  "reports": {
+    "epesodes": {
+      "-NPX8S_-PKeLxuGVsiP_": "epereport"
+    }
+  },
+  "tvchannels": [
+    {
+      "categori": "cartoon",
+      "imgurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/2014_Disney_Channel_logo.svg/2560px-2014_Disney_Channel_logo.svg.png",
+      "title": "disney channel",
+      "url": "https://rr2---sn-apaapm4g-apae.googlevideo.com/videoplayback?expire=1680034440&ei=KPYiZLbALa-tvdIP59KPsA4&ip=2001%3A41d0%3Ad%3A260c%3A%3A&id=o-AKQh5IyDeTP57lkqBrRtnaWELFsjIYKmdZ97xo4nETjW&itag=22&source=youtube&requiressl=yes&mh=4e&mm=31%2C29&mn=sn-apaapm4g-apae%2Csn-25ge7nsd&ms=au%2Crdu&mv=m&mvi=2&pl=48&initcwndbps=165000&spc=99c5CYhEmEEB8gtG5gF4uevEipBlOdI&vprv=1&svpuc=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=404.352&lmt=1679963358032720&mt=1680012548&fvip=3&fexp=24007246&c=ANDROID&txp=5432434&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRAIgZJ6RDLYsayMJKPNCdW9hTpCkUpjqpyJxpexyFQOlLxQCIEn9KKsFlghks8iTP8OknJoop5cwt6Jij0gnFcHDNmjA&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRQIhAMHhwl_b3eL47Euvw7NbUOFy3UF5s4iwEkyH-C2PVu72AiBFNJqv0XlYX-AOoA5bGMMOZsaZe80vg51nK3Wzx58txA%3D%3D&title=%D8%B1%D9%85%D8%B6%D8%A7%D9%86+%D9%81%D8%B1%D8%B5%D8%A9+%D9%84%D9%84%D8%AA%D8%BA%D9%8A%D9%8A%D8%B1"
+    },
+    {
+      "categori": "religen",
+      "imgurl": "https://www.arabsat.com/Library/ChannelImages/Saudi_Ch_for_Quran_HD.png",
+      "title": "Saudi quran",
+      "url": "fd"
+    }
+  ],
+  "updates": {
+    "update1": {
+      "link": "https://jycartoon.blogspot.com/",
+      "versionnumber": 1
+    }
+  }
+}
